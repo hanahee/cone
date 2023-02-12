@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 이서윤체 폰트 적용을 위한 코드 */
+      @font-face {
+        font-family: "LeeSeoyun";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      /* body태그 자체에 css 요소 부여 */
+        body {
+            font-family: "LeeSeoyun";
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-image: url("./background.png");
+        }
+
+        .container{
+            width: 390px;
+            background-color: rgb(255, 186, 211);
+            height: 100%;
+        }
+
+        .photos {
+            margin-top: 30px;
+        }
+
+        .photo-frame{
+            background-color: white;
+            margin: 15px 20px;
+            height: 200px;
+
+            background-size: cover;
+            position: relative;
+
+            cursor: pointer;
+        }
+
+        .footer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .f-title{
+            color: white;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .f-date{
+            color: white;
+            font-size: 15px;
+            font-weight: 200;
+        }
+
+        #image1 {
+            background-image: url('./1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #image2 {
+            background-image: url('./2.jpg');
+            background-size: cover;
+            background-position: 0px -90px;
+        }
+
+        #image3 {
+            background-image: url('./3.jpg');
+            background-size: cover;
+            background-position: 0px -150px;
+        }
+
+        #image4 {
+            background-image: url('./4.jpg');
+            background-size: cover;
+            background-position: 0px -150px;
+        }
+
+        .photo_description{
+            color: white;
+            background-color: rgb(173, 129, 186);
+
+            width: fit-content;
+            padding: 0 10px;
+            margin-bottom: 20px;
+
+            border-radius: 10px;
+
+            position: absolute;
+            bottom: 0;
+
+            transform: translate(-50%);
+            left: 50%;
+        }
+    </style>
+    <script>
+        // 클릭 기능
+        // 1. 선택된 사진의 숫자를 가진 텍스트를 alert 형태로 출력해줌
+        function alertText(number) {
+        	alert(`${number}번째 추억이에요! 눌러주셔서 감사합니다 :)`);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="photos">
+            <div id="image1" class="photo-frame"
+                    onclick="alertText(1)"
+                    >
+                <span id="desc1" class="photo_description"> Spring
+                </span>
+            </div>
+            <div id="image2" class="photo-frame"
+                    onclick="alertText(2)"
+                >
+                <span id="desc2" class="photo_description"> Summer
+                </span>
+            </div>
+            <div id="image3" class="photo-frame"
+                onclick="alertText(3)"
+            >
+                <span id="desc3" class="photo_description"> Fall
+                </span>
+            </div>
+            <div id="image4" class="photo-frame"
+                onclick="alertText(4)">
+                <span id="desc4" class="photo_description"> Winter
+                </span>
+            </div>
+        </div>
+        <div class="footer">
+            <p class="f-title">Four Seasons</p>
+            <p class="f-date">2023.02.11</p>
+        </div> 
+
+    </div>
+</body>
+</html>
